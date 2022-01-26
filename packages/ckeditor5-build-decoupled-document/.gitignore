@@ -1,0 +1,11 @@
+/dist
+/tmp
+/out-tsc
+/bazel-out
+/node-modules
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*

@@ -23,6 +23,7 @@ import CKFinder from '@ckeditor/ckeditor5-ckfinder/src/ckfinder';
 import EasyImage from '@ckeditor/ckeditor5-easy-image/src/easyimage';
 import Heading from '@ckeditor/ckeditor5-heading/src/heading';
 import Image from '@ckeditor/ckeditor5-image/src/image';
+import AutoImage from '@ckeditor/ckeditor5-image/src/image';
 import ImageCaption from '@ckeditor/ckeditor5-image/src/imagecaption';
 import ImageResize from '@ckeditor/ckeditor5-image/src/imageresize';
 import ImageStyle from '@ckeditor/ckeditor5-image/src/imagestyle';
@@ -31,6 +32,7 @@ import ImageUpload from '@ckeditor/ckeditor5-image/src/imageupload';
 import Indent from '@ckeditor/ckeditor5-indent/src/indent';
 import IndentBlock from '@ckeditor/ckeditor5-indent/src/indentblock';
 import Link from '@ckeditor/ckeditor5-link/src/link';
+import AutoLink from '@ckeditor/ckeditor5-link/src/link';
 import List from '@ckeditor/ckeditor5-list/src/list';
 // import ListProperties from '@ckeditor/ckeditor5-list/src/listproperties';
 import MediaEmbed from '@ckeditor/ckeditor5-media-embed/src/mediaembed';
@@ -64,6 +66,7 @@ DecoupledEditor.builtinPlugins = [
 	EasyImage,
 	Heading,
 	Image,
+	AutoImage,
 	ImageCaption,
 	ImageResize,
 	ImageStyle,
@@ -72,6 +75,7 @@ DecoupledEditor.builtinPlugins = [
 	Indent,
 	IndentBlock,
 	Link,
+	AutoLink,
 	List,
 	// ListProperties,
 	MediaEmbed,
