@@ -32,7 +32,7 @@ import Indent from '@ckeditor/ckeditor5-indent/src/indent';
 import IndentBlock from '@ckeditor/ckeditor5-indent/src/indentblock';
 import Link from '@ckeditor/ckeditor5-link/src/link';
 import List from '@ckeditor/ckeditor5-list/src/list';
-import ListProperties from '@ckeditor/ckeditor5-list/src/listproperties';
+// import ListProperties from '@ckeditor/ckeditor5-list/src/listproperties';
 import MediaEmbed from '@ckeditor/ckeditor5-media-embed/src/mediaembed';
 import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph';
 import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefromoffice';
@@ -40,8 +40,9 @@ import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation';
 import CloudServices from '@ckeditor/ckeditor5-cloud-services/src/cloudservices';
+import ExportWord from '@ckeditor/ckeditor5-export-word/src/exportword';
 
-export default class DecoupledEditor extends DecoupledEditorBase {}
+export default class DecoupledEditor extends DecoupledEditorBase { }
 
 // Plugins to include in the build.
 DecoupledEditor.builtinPlugins = [
@@ -72,13 +73,14 @@ DecoupledEditor.builtinPlugins = [
 	IndentBlock,
 	Link,
 	List,
-	ListProperties,
+	// ListProperties,
 	MediaEmbed,
 	Paragraph,
 	PasteFromOffice,
 	Table,
 	TableToolbar,
-	TextTransformation
+	TextTransformation,
+	ExportWord,
 ];
 
 // Editor configuration.
@@ -112,7 +114,9 @@ DecoupledEditor.defaultConfig = {
 			'mediaEmbed',
 			'|',
 			'undo',
-			'redo'
+			'redo',
+			'|',
+			'ExportWord'
 		]
 	},
 	image: {
@@ -133,6 +137,19 @@ DecoupledEditor.defaultConfig = {
 			'mergeTableCells'
 		]
 	},
+	exportWord: {
+		stylesheets: [
+			'EDITOR_STYLES'
+		],
+		fileName: 'my-sample-file.docx',
+		converterOptions: {
+			format: 'A4',
+			margin_top: '20mm',
+			margin_bottom: '20mm',
+			margin_right: '12mm',
+			margin_left: '12mm'
+		}
+	},
 	list: {
 		properties: {
 			styles: true,
@@ -141,5 +158,5 @@ DecoupledEditor.defaultConfig = {
 		}
 	},
 	// This value must be kept in sync with the language defined in webpack.config.js.
-	language: 'en'
+	language: 'zh'
 };
