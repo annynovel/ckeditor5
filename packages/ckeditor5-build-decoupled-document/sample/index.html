@@ -19,6 +19,7 @@
 
 <h2>The editable</h2>
 <div class="editable-container"></div>
+<div id="word-count"></div>
 
 <style>
 	.editable-container,
@@ -63,6 +64,10 @@
 
 			document.querySelector( '.toolbar-container' ).appendChild( editor.ui.view.toolbar.element );
 			document.querySelector( '.editable-container' ).appendChild( editor.ui.view.editable.element );
+			const wordCountPlugin = editor.plugins.get( 'WordCount' );
+        	const wordCountWrapper = document.getElementById( 'word-count' );
+
+        	wordCountWrapper.appendChild( wordCountPlugin.wordCountContainer );
 		} )
 		.catch( error => {
 			console.error( 'There was a problem initializing the editor.', error );

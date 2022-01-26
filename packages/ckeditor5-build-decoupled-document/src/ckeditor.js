@@ -22,6 +22,7 @@ import BlockQuote from '@ckeditor/ckeditor5-block-quote/src/blockquote';
 import CKFinder from '@ckeditor/ckeditor5-ckfinder/src/ckfinder';
 import EasyImage from '@ckeditor/ckeditor5-easy-image/src/easyimage';
 import Heading from '@ckeditor/ckeditor5-heading/src/heading';
+import Title from '@ckeditor/ckeditor5-heading/src/title';
 import Image from '@ckeditor/ckeditor5-image/src/image';
 import AutoImage from '@ckeditor/ckeditor5-image/src/image';
 import ImageCaption from '@ckeditor/ckeditor5-image/src/imagecaption';
@@ -40,10 +41,25 @@ import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph';
 import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefromoffice';
 import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
+import TableCaption from '@ckeditor/ckeditor5-table/src/tablecaption';
 import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation';
 import CloudServices from '@ckeditor/ckeditor5-cloud-services/src/cloudservices';
 import ExportWord from '@ckeditor/ckeditor5-export-word/src/exportword';
-
+import Autosave from '@ckeditor/ckeditor5-autosave/src/autosave';
+import FindAndReplace from '@ckeditor/ckeditor5-find-and-replace/src/findandreplace';
+import Highlight from '@ckeditor/ckeditor5-highlight/src/highlight';
+import HorizontalLine from '@ckeditor/ckeditor5-horizontal-line/src/horizontalline';
+import Mention from '@ckeditor/ckeditor5-mention/src/mention';
+import PageBreak from '@ckeditor/ckeditor5-page-break/src/pagebreak';
+// import Pagination from '@ckeditor/ckeditor5-pagination/src/pagination';
+import SpecialCharacters from '@ckeditor/ckeditor5-special-characters/src/specialcharacters';
+import SpecialCharactersCurrency from '@ckeditor/ckeditor5-special-characters/src/specialcharacters';
+import SpecialCharactersArrows from '@ckeditor/ckeditor5-special-characters/src/specialcharacters';
+import SpecialCharactersLatin from '@ckeditor/ckeditor5-special-characters/src/specialcharacters';
+import SpecialCharactersMathematical from '@ckeditor/ckeditor5-special-characters/src/specialcharacters';
+import SpecialCharactersText from '@ckeditor/ckeditor5-special-characters/src/specialcharacters';
+import SpecialCharactersEssentials from '@ckeditor/ckeditor5-special-characters/src/specialcharacters';
+import WordCount from '@ckeditor/ckeditor5-word-count/src/wordcount';
 export default class DecoupledEditor extends DecoupledEditorBase { }
 
 // Plugins to include in the build.
@@ -65,6 +81,7 @@ DecoupledEditor.builtinPlugins = [
 	CloudServices,
 	EasyImage,
 	Heading,
+	Title,
 	Image,
 	AutoImage,
 	ImageCaption,
@@ -83,8 +100,24 @@ DecoupledEditor.builtinPlugins = [
 	PasteFromOffice,
 	Table,
 	TableToolbar,
+	TableCaption,
 	TextTransformation,
 	ExportWord,
+	Autosave,
+	FindAndReplace,
+	Highlight,
+	HorizontalLine,
+	Mention,
+	PageBreak,
+	// Pagination,
+	SpecialCharacters,
+	SpecialCharactersCurrency,
+	SpecialCharactersArrows,
+	SpecialCharactersLatin,
+	SpecialCharactersMathematical,
+	SpecialCharactersText,
+	SpecialCharactersEssentials,
+	WordCount
 ];
 
 // Editor configuration.
@@ -120,7 +153,13 @@ DecoupledEditor.defaultConfig = {
 			'undo',
 			'redo',
 			'|',
-			'ExportWord'
+			'ExportWord',
+			'findandreplace',
+			'Highlight',
+			'HorizontalLine',
+			'PageBreak',
+			// 'Pagination',
+			'SpecialCharacters'
 		]
 	},
 	image: {
@@ -139,7 +178,8 @@ DecoupledEditor.defaultConfig = {
 			'tableColumn',
 			'tableRow',
 			'mergeTableCells'
-		]
+		],
+		defaultHeadings: { rows: 1, columns: 1 }
 	},
 	exportWord: {
 		stylesheets: [
